@@ -25,8 +25,8 @@ const Dashboard = ({ selectedPokemon, setSelectedPokemon }) => {
             />
           </MyPokemonCard>
         ))}
-        {Array.from({ length: 6 - selectedPokemon.length }).map((empty) => (
-          <MyPokemonCard key={empty}>
+        {Array.from({ length: 6 - selectedPokemon.length }).map((_, idx) => (
+          <MyPokemonCard key={idx}>
             <MyPokemonImg src="../../public/pokeball.png"></MyPokemonImg>
           </MyPokemonCard>
         ))}
