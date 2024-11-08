@@ -10,27 +10,25 @@ const Router = () => {
   const [selectedPokemon, setSelectedPokemon] = useState([]);
 
   return (
-    <div>
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route
-            path="/dex/"
-            element={
-              <Dex
-                pokemons={pokemons}
-                selectedPokemon={selectedPokemon}
-                setSelectedPokemon={setSelectedPokemon}
-              />
-            }
-          />
-          <Route
-            path="/dex/pokemondetail/:id"
-            element={<PokemonDetail pokemons={pokemons} />}
-          />
-        </Routes>
-      </BrowserRouter>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route
+          path="/dex/"
+          element={
+            <Dex
+              pokemons={pokemons}
+              selectedPokemon={selectedPokemon}
+              setSelectedPokemon={setSelectedPokemon}
+            />
+          }
+        />
+        <Route
+          path="/dex/pokemondetail/:id"
+          element={<PokemonDetail pokemons={pokemons} />}
+        />
+      </Routes>
+    </BrowserRouter>
   );
 };
 
