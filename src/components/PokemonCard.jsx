@@ -8,13 +8,11 @@ import {
   PokomonId,
   PokomonName,
 } from "../style/style";
+import { useContext } from "react";
+import { PokemonContext } from "../context/PokemonContext";
 
-const PokemonCard = ({
-  pokemon,
-  selectedPokemon,
-  setSelectedPokemon,
-  isSelected,
-}) => {
+const PokemonCard = ({ pokemon, isSelected }) => {
+  const { selectedPokemon, setSelectedPokemon } = useContext(PokemonContext);
   const navigate = useNavigate();
   const onClickGoToPokemonDetail = () => {
     navigate(`/dex/pokemondetail/${pokemon.id}`);

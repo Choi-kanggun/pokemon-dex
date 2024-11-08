@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import {
   DetailNameBox,
@@ -10,8 +10,10 @@ import {
   DetailPokemonType,
   GotoDexBtn,
 } from "../style/style";
+import { PokemonContext } from "../context/PokemonContext";
 
-const PokemonDetail = ({ pokemons }) => {
+const PokemonDetail = () => {
+  const { pokemons } = useContext(PokemonContext);
   const params = useParams();
   const navigate = useNavigate();
   const id = params.id - 1;

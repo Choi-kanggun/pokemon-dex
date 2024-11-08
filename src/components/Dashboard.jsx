@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import {
   DashboardTitle,
   MyPokemonCard,
@@ -7,8 +7,10 @@ import {
   MyPokemonWrapper,
 } from "../style/style";
 import PokemonCard from "./PokemonCard";
+import { PokemonContext } from "../context/PokemonContext";
 
-const Dashboard = ({ selectedPokemon, setSelectedPokemon }) => {
+const Dashboard = () => {
+  const { selectedPokemon, setSelectedPokemon } = useContext(PokemonContext);
   return (
     <MyPokemonWrapper>
       <DashboardTitle>나만의 포켓몬</DashboardTitle>
@@ -25,11 +27,13 @@ const Dashboard = ({ selectedPokemon, setSelectedPokemon }) => {
             />
           </MyPokemonCard>
         ))}
-        {Array.from({ length: 6 - selectedPokemon.length }).map((empty) => (
-          <MyPokemonCard key={empty}>
-            <MyPokemonImg src="../../public/pokeball.png"></MyPokemonImg>
-          </MyPokemonCard>
-        ))}
+        {Array.from({ length: 6 - selectedPokemon.length }).map(
+          (empty, idx) => (
+            <MyPokemonCard key={idx}>
+              <MyPokemonImg src="../../public/pokeball.png"></MyPokemonImg>
+            </MyPokemonCard>
+          )
+        )}
       </MyPokemonCardBox>
     </MyPokemonWrapper>
   );
