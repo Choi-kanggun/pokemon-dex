@@ -27,13 +27,11 @@ const Dashboard = () => {
             />
           </MyPokemonCard>
         ))}
-        {Array.from({ length: 6 - selectedPokemon.length }).map(
-          (empty, idx) => (
-            <MyPokemonCard key={idx}>
-              <MyPokemonImg src="../../public/pokeball.png"></MyPokemonImg>
-            </MyPokemonCard>
-          )
-        )}
+        {Array.from({ length: 6 - selectedPokemon.length }).map((_, idx) => (
+          <MyPokemonCard key={idx}>
+            <MyPokemonImg src="../../public/pokeball.png"></MyPokemonImg>
+          </MyPokemonCard>
+        ))}
       </MyPokemonCardBox>
     </MyPokemonWrapper>
   );
