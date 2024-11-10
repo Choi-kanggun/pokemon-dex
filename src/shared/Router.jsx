@@ -3,7 +3,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Home from "../pages/Home";
 import Dex from "../pages/Dex";
 import MOCK_DATA from "../mock/mock-data";
-import PokemonDetail from "../components/pokemonDetail";
+import PokemonDetail from "../components/PokemonDetail";
 import { PokemonContext } from "../context/PokemonContext";
 
 const Router = () => {
