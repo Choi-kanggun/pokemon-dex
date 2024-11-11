@@ -1,16 +1,17 @@
-import React, { useContext } from "react";
 import {
   DashboardTitle,
   MyPokemonCard,
   MyPokemonCardBox,
-  MyPokemonImg,
   MyPokemonWrapper,
+  PokeballBox,
+  PokeBallImg,
 } from "../style/style";
 import PokemonCard from "./PokemonCard";
-import { PokemonContext } from "../context/PokemonContext";
+import { useSelector } from "react-redux";
 
 const Dashboard = () => {
-  const { selectedPokemon, setSelectedPokemon } = useContext(PokemonContext);
+  const selectedPokemon = useSelector((store) => store.pokemon.selectedPokemon);
+
   return (
     <MyPokemonWrapper>
       <DashboardTitle>나만의 포켓몬</DashboardTitle>
@@ -19,8 +20,6 @@ const Dashboard = () => {
           <MyPokemonCard key={pokemon.id}>
             <PokemonCard
               pokemon={pokemon}
-              selectedPokemon={selectedPokemon}
-              setSelectedPokemon={setSelectedPokemon}
               isSelected={selectedPokemon.some(
                 (selectPokemon) => selectPokemon.id === pokemon.id
               )}
@@ -28,9 +27,9 @@ const Dashboard = () => {
           </MyPokemonCard>
         ))}
         {Array.from({ length: 6 - selectedPokemon.length }).map((_, idx) => (
-          <MyPokemonCard key={idx}>
-            <MyPokemonImg src="../../public/pokeball.png"></MyPokemonImg>
-          </MyPokemonCard>
+          <PokeballBox key={idx}>
+            <PokeBallImg src="../../public/pokeball.png"></PokeBallImg>
+          </PokeballBox>
         ))}
       </MyPokemonCardBox>
     </MyPokemonWrapper>

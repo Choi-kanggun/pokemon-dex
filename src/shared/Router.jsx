@@ -1,4 +1,3 @@
-import React, { useState } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Home from "../pages/Home";
 import Dex from "../pages/Dex";
@@ -8,24 +7,21 @@ import { PokemonContext } from "../context/PokemonContext";
 
 const Router = () => {
   const pokemons = MOCK_DATA;
-  const [selectedPokemon, setSelectedPokemon] = useState([]);
 
   return (
-    <PokemonContext.Provider
-      value={{
-        pokemons,
-        selectedPokemon,
-        setSelectedPokemon,
-      }}
-    >
-      <BrowserRouter>
+    <BrowserRouter>
+      <PokemonContext.Provider
+        value={{
+          pokemons,
+        }}
+      >
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/dex/" element={<Dex />} />
           <Route path="/dex/pokemondetail/:id" element={<PokemonDetail />} />
         </Routes>
-      </BrowserRouter>
-    </PokemonContext.Provider>
+      </PokemonContext.Provider>
+    </BrowserRouter>
   );
 };
 

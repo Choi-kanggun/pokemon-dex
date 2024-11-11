@@ -8,24 +8,27 @@ import {
   PokomonId,
   PokomonName,
 } from "../style/style";
-import { useContext } from "react";
-import { PokemonContext } from "../context/PokemonContext";
+import { useDispatch, useSelector } from "react-redux";
+import { addPokemon, deletePokemon } from "../redux/modules/pokemon";
 
 const PokemonCard = ({ pokemon, isSelected }) => {
-  const { selectedPokemon, setSelectedPokemon } = useContext(PokemonContext);
+  const selectedPokemon = useSelector((state) => state.pokemon.selectedPokemon);
   const navigate = useNavigate();
+  const dispatch = useDispatch();
+
   const onClickGoToPokemonDetail = () => {
     navigate(`/dex/pokemondetail/${pokemon.id}`);
   };
 
   const onClickDeleteMyPokemon = (e) => {
     e.stopPropagation();
-    const updateSelectedPokemon = selectedPokemon.filter(
-      (selectPokemon) => selectPokemon.id !== pokemon.id
-    );
     alert(`${pokemon.korean_name}이 삭제되었습니다.`);
     isSelected = false;
-    setSelectedPokemon(updateSelectedPokemon);
+    dispatch(
+      deletePokemon({
+        id: pokemon.id,
+      })
+    );
   };
 
   const onClickAddMyPokemon = (e) => {
@@ -40,10 +43,9 @@ const PokemonCard = ({ pokemon, isSelected }) => {
         alert("포켓몬은 최대 6마리까지 선택할 수 있습니다.");
         return;
       } else {
-        const newSelectedPokemon = [...selectedPokemon, pokemon];
-        setSelectedPokemon(newSelectedPokemon);
         isSelected = true;
         alert(`${pokemon.korean_name}이 추가되었습니다.`);
+        dispatch(addPokemon(pokemon));
       }
     }
   };

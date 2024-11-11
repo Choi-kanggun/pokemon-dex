@@ -33,14 +33,14 @@ export const DexStartBtn = styled.button`
 `;
 
 export const PokeDexWrapper = styled.div`
-  background-color: #eeeeee;
+  background-color: lightyellow;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   width: 100%;
   height: 100%;
-  padding: 20px;
+  padding: 30px;
 `;
 
 export const MyPokemonWrapper = styled.div`
@@ -50,14 +50,16 @@ export const MyPokemonWrapper = styled.div`
   max-width: 1300px;
   background-color: white;
   margin-bottom: 20px;
-  padding: 20px;
 `;
 
 export const MyPokemonCardBox = styled.div`
   margin-top: 20px;
+  width: 100%;
+  max-width: 1300px;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
+  flex-wrap: wrap;
 `;
 
 export const MyPokemonCard = styled.div`
@@ -65,31 +67,55 @@ export const MyPokemonCard = styled.div`
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
-  padding: 0 0 30px 0;
+  width: 150px;
+  padding: 0 0 20px 0;
 `;
 
-export const MyPokemonImg = styled.img`
+export const PokeballBox = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 0 80px 0;
+`;
+
+export const PokeBallImg = styled.img`
   width: 50px;
   height: 50px;
 `;
 
-export const DashboardTitle = styled.p`
+const Title = styled.p`
   color: #ff7171;
   font-size: 24px;
   font-weight: bold;
   padding: 20px;
 `;
 
+export const DashboardTitle = styled(Title)``;
+
+export const ListTitle = styled(Title)``;
+
+export const DetailTitle = styled(Title)``;
+
 export const PokeCardListWrapper = styled.div`
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+`;
+
+export const PokeCardList = styled.div`
   background-color: white;
   border-radius: 10px;
   max-width: 1300px;
   display: flex;
+  flex-direction: row;
   justify-content: space-evenly;
   align-items: center;
   flex-wrap: wrap;
   gap: 20px;
-  padding: 20px;
 `;
 
 export const PokeCard = styled.div`
@@ -161,11 +187,25 @@ export const DeleteCardBtn = styled.button`
   }
 `;
 
-export const DetailPokemonBox = styled.div`
+export const DetailPokemonWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 200px;
+  background-color: lightyellow;
+  padding: 30px;
+`;
+
+export const DetailPokemonInfoBox = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 1300px;
+  height: 65vh;
+  background-color: white;
+  border-radius: 10px;
+  padding-bottom: 10px;
 `;
 
 export const DetailPokemonImg = styled.div`

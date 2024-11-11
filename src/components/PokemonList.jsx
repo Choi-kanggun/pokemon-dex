@@ -1,24 +1,26 @@
 import React, { useContext } from "react";
 import PokemonCard from "./PokemonCard";
-import { PokeCardListWrapper } from "../style/style";
+import { ListTitle, PokeCardList, PokeCardListWrapper } from "../style/style";
 import { PokemonContext } from "../context/PokemonContext";
+import { useSelector } from "react-redux";
 
 const PokemonList = () => {
-  const { pokemons, selectedPokemon, setSelectedPokemon } =
-    useContext(PokemonContext);
+  const { pokemons } = useContext(PokemonContext);
+  const selectedPokemon = useSelector((state) => state.pokemon.selectedPokemon);
   return (
     <PokeCardListWrapper>
-      {pokemons.map((pokemon) => (
-        <PokemonCard
-          key={pokemon.id}
-          pokemon={pokemon}
-          selectedPokemon={selectedPokemon}
-          setSelectedPokemon={setSelectedPokemon}
-          isSelected={selectedPokemon.some(
-            (selectPokemon) => selectPokemon.id === pokemon.id
-          )}
-        />
-      ))}
+      <ListTitle>포켓몬 리스트</ListTitle>
+      <PokeCardList>
+        {pokemons.map((pokemon) => (
+          <PokemonCard
+            key={pokemon.id}
+            pokemon={pokemon}
+            isSelected={selectedPokemon.some(
+              (selectPokemon) => selectPokemon.id === pokemon.id
+            )}
+          />
+        ))}
+      </PokeCardList>
     </PokeCardListWrapper>
   );
 };
