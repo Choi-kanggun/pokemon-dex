@@ -156,7 +156,7 @@ export const PokomonId = styled.p`
 `;
 
 export const AddCardBtn = styled.button`
-  font-size: 14px;
+  font-size: 16px;
   border: none;
   background-color: #6dc96d;
   color: white;
@@ -172,7 +172,7 @@ export const AddCardBtn = styled.button`
 `;
 
 export const DeleteCardBtn = styled.button`
-  font-size: 14px;
+  font-size: 16px;
   border: none;
   background-color: #ff7171;
   color: white;
@@ -198,7 +198,7 @@ export const DetailPokemonWrapper = styled.div`
 export const DetailPokemonInfoBox = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
   width: 100%;
   max-width: 1300px;
@@ -246,13 +246,20 @@ export const DetailPokemonId = styled.p`
   padding: 10px;
 `;
 
+export const DetailBtnBox = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+`;
+
 export const GotoDexBtn = styled.button`
+  margin-right: 10px;
   background-color: #ffd000;
-  border-radius: 10px;
-  padding: 10px;
+  border-radius: 5px;
+  padding: 6px;
   border: none;
   cursor: pointer;
-  margin-top: 20px;
   font-weight: bold;
   font-size: 16px;
   &:hover {
