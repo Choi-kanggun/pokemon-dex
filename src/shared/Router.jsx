@@ -5,6 +5,7 @@ import MOCK_DATA from "../mock/mock-data";
 import PokemonDetail from "../components/PokemonDetail";
 import { PokemonContext } from "../context/PokemonContext";
 
+
 const Router = () => {
   const pokemons = MOCK_DATA;
 

@@ -9,7 +9,8 @@ import {
   PokomonName,
 } from "../style/style";
 import { useDispatch, useSelector } from "react-redux";
-import { addPokemon, deletePokemon } from "../redux/modules/pokemon";
+import { addPokemon, deletePokemon } from "../redux/slices/pokemonSlice";
+import Swal from "sweetalert2";
 
 const PokemonCard = ({ pokemon, isSelected }) => {
   const selectedPokemon = useSelector((state) => state.pokemon.selectedPokemon);
@@ -22,7 +23,12 @@ const PokemonCard = ({ pokemon, isSelected }) => {
 
   const onClickDeleteMyPokemon = (e) => {
     e.stopPropagation();
-    alert(`${pokemon.korean_name}이 삭제되었습니다.`);
+    Swal.fire({
+      icon: "success",
+      text: `${pokemon.korean_name} 이/가 삭제되었습니다.`,
+      confirmButtonText: "예",
+      confirmButtonColor: "#429f50",
+    });
     isSelected = false;
     dispatch(
       deletePokemon({
@@ -36,15 +42,30 @@ const PokemonCard = ({ pokemon, isSelected }) => {
     if (
       selectedPokemon.some((selectPokemon) => selectPokemon.id === pokemon.id)
     ) {
-      alert(`${pokemon.korean_name}}는 이미 선택된 포켓몬 입니다.`);
+      Swal.fire({
+        icon: "warning",
+        text: `${pokemon.korean_name}} 은/는 이미 선택된 포켓몬 입니다.`,
+        confirmButtonText: "예",
+        confirmButtonColor: "#429f50",
+      });
       return;
     } else {
       if (selectedPokemon.length > 5) {
-        alert("포켓몬은 최대 6마리까지 선택할 수 있습니다.");
+        Swal.fire({
+          icon: "warning",
+          text: "포켓몬은 최대 6마리까지 선택할 수 있습니다.",
+          confirmButtonText: "예",
+          confirmButtonColor: "#429f50",
+        });
         return;
       } else {
         isSelected = true;
-        alert(`${pokemon.korean_name}이 추가되었습니다.`);
+        Swal.fire({
+          icon: "success",
+          text: `${pokemon.korean_name} 이/가 추가되었습니다.`,
+          confirmButtonText: "예",
+          confirmButtonColor: "#429f50",
+        });
         dispatch(addPokemon(pokemon));
       }
     }

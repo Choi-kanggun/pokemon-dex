@@ -17,28 +17,44 @@ import {
 import { PokemonContext } from "../context/PokemonContext";
 import Dashboard from "./Dashboard";
 import { useDispatch, useSelector } from "react-redux";
-import { addPokemon } from "../redux/modules/pokemon";
+import { addPokemon } from "../redux/slices/pokemonSlice";
+import Swal from "sweetalert2";
 
 const PokemonDetail = () => {
   const { pokemons } = useContext(PokemonContext);
   const selectedPokemon = useSelector((state) => state.pokemon.selectedPokemon);
-  console.log(pokemons);
-  const dispatch = useDispatch();
   const params = useParams();
-  const navigate = useNavigate();
   const id = params.id - 1;
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+
   const onClickGoToDex = () => {
     navigate("/dex");
   };
 
   const onClickAddMyPokemon = () => {
     if (selectedPokemon.some((pokemon) => pokemon.id === pokemons[id].id)) {
-      alert(`${pokemons[id].korean_name}은 이미 추가된 포켓몬입니다.`);
+      Swal.fire({
+        icon: "warning",
+        text: `${pokemons[id].korean_name} 은/는 이미 선택된 포켓몬 입니다.`,
+        confirmButtonText: "예",
+        confirmButtonColor: "#429f50",
+      });
       return;
     } else if (selectedPokemon.length > 5) {
-      alert("포켓몬은 최대 6마리까지 선택할 수 있습니다.");
+      Swal.fire({
+        icon: "warning",
+        text: "포켓몬은 최대 6마리까지 선택할 수 있습니다.",
+        confirmButtonText: "예",
+        confirmButtonColor: "#429f50",
+      });
     } else {
-      alert(`${pokemons[id].korean_name}이 추가되었습니다.`);
+      Swal.fire({
+        icon: "success",
+        text: `${pokemons[id].korean_name} 이/가 추가되었습니다.`,
+        confirmButtonText: "예",
+        confirmButtonColor: "#429f50",
+      });
       dispatch(addPokemon(pokemons[id]));
     }
   };
