@@ -27,7 +27,7 @@ const Dashboard = ({ selectedPokemon, setSelectedPokemon }) => {
         ))}
         {Array.from({ length: 6 - selectedPokemon.length }).map((_, idx) => (
           <MyPokemonCard key={idx}>
-            <MyPokemonImg src="../../public/pokeball.png"></MyPokemonImg>
+            <MyPokemonImg src="https://react-6-pokemon.vercel.app/assets/pokeball-13iwdk7Y.png"></MyPokemonImg>
           </MyPokemonCard>
         ))}
       </MyPokemonCardBox>
