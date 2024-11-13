@@ -75,7 +75,6 @@
     - 모바일과 데스크탑에서 모두 사용하기 좋도록 반응형 레이아웃을 고려합니다.
 
 <aside>
-<img src="/icons/hexagon-alternate_gray.svg" alt="/icons/hexagon-alternate_gray.svg" width="40px" />
 
 ### 선택 구현사항
 
