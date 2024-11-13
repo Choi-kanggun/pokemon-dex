@@ -1,4 +1,4 @@
-## 포켓몬 도감 만들기<br />
+# 포켓몬 도감 만들기<br />
 ## 1. 프로젝트 소개 및 목표<br />
 ![image](https://github.com/user-attachments/assets/fd74d188-ed98-4e0c-817d-494d27269203)<br />
 
@@ -119,6 +119,7 @@
     - `react-toastify`, `sweetalert2`, `sonner` 등 다양한 라이브러리를 사용해보세요.
     - 라이브러리를 설치하고, 사용자 상호작용 시 직관적인 피드백을 제공하여 더 세련된 UI를 구현합니다.
 </aside>
+---
 
 ## 4. 브랜치 분리 <br />
 ![image](https://github.com/user-attachments/assets/7066f0e7-ab3f-498e-9c55-f2b5375de28c)<br />
