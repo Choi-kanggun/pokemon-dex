@@ -1,11 +1,11 @@
-포켓몬 도감 만들기
-1️⃣프로젝트 소개 및 목표
-![image](https://github.com/user-attachments/assets/fd74d188-ed98-4e0c-817d-494d27269203)
+포켓몬 도감 만들기<br />
+1️⃣ 프로젝트 소개 및 목표
+![image](https://github.com/user-attachments/assets/fd74d188-ed98-4e0c-817d-494d27269203)<br />
 
-2️⃣컴포넌트 분리
-![image](https://github.com/user-attachments/assets/cc543ead-435d-43f3-8f99-04ac39cf0fc5)
+2️⃣ 컴포넌트 분리
+![image](https://github.com/user-attachments/assets/cc543ead-435d-43f3-8f99-04ac39cf0fc5)<br />
 
-3️⃣프로젝트 가이드
+3️⃣ 프로젝트 가이드
 ### 필수 구현사항
 
 ---
@@ -115,12 +115,12 @@
     - 라이브러리를 설치하고, 사용자 상호작용 시 직관적인 피드백을 제공하여 더 세련된 UI를 구현합니다.
 </aside>
 
-4️⃣브랜치 분리
-![image](https://github.com/user-attachments/assets/7066f0e7-ab3f-498e-9c55-f2b5375de28c)
-![image](https://github.com/user-attachments/assets/45c5527a-dbaf-445a-8e59-8849e1a79adf)
+4️⃣ 브랜치 분리
+![image](https://github.com/user-attachments/assets/7066f0e7-ab3f-498e-9c55-f2b5375de28c)<br />
+![image](https://github.com/user-attachments/assets/45c5527a-dbaf-445a-8e59-8849e1a79adf)<br />
 
-5️⃣vercel 배포
-![image](https://github.com/user-attachments/assets/dfd5fd9c-a703-453b-bc32-e30a637b4dd2)
+5️⃣ vercel 배포
+![image](https://github.com/user-attachments/assets/dfd5fd9c-a703-453b-bc32-e30a637b4dd2)<br />
 
-6️⃣프로젝트 시연
-![bandicam2024-11-1322-08-35-538-ezgif com-video-to-gif-converter](https://github.com/user-attachments/assets/9f7e3eda-2a3d-44fd-84b9-827be5e14e6f)
+6️⃣ 프로젝트 시연
+![bandicam2024-11-1322-08-35-538-ezgif com-video-to-gif-converter](https://github.com/user-attachments/assets/9f7e3eda-2a3d-44fd-84b9-827be5e14e6f)<br />
